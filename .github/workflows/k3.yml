@@ -61,6 +61,10 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+    - name: add custom source
+      run: |
+        cd openwrt
+        sed -i '/helloworld/s/^#//g' feeds.conf.default
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
