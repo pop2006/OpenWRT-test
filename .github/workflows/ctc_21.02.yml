@@ -70,7 +70,7 @@ jobs:
     - name: 克隆源代码
       env: 
         REPO_URL: https://github.com/immortalwrt/immortalwrt
-        REPO_BRANCH: openwrt-18.06
+        REPO_BRANCH: openwrt-21.02
        
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
@@ -150,7 +150,7 @@ jobs:
         cd firmware
         echo ${{ env.date4 }} > version.txt
         mv sha256sums ${{matrix.target}}_sha256sums
-        rename -v "s/^immortalwrt/${{ env.date3 }}-ctc_18.06/" *
+        rename -v "s/^immortalwrt/${{ env.date3 }}-ctc_21.02/" *
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "::set-output name=status::success"
       
