@@ -82,10 +82,10 @@ jobs:
       run: |
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-#    - name: 自定义安装源
-#      working-directory: ./openwrt
-#      run: |
-#        git clone https://github.com/kenzok78/jeii package/jeii     
+    - name: 自定义安装源
+      working-directory: ./openwrt
+      run: |
+        git clone https://github.com/kenzok78/jeii package/jeii     
         
     - name: 自定义配置文件
       env:
