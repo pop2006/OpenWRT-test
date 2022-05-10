@@ -9,9 +9,8 @@
 #=============================================================
 
 # fw876/helloworld
-#sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.defaultault
-
-echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
+#sed -i "/helloworld/d" "feeds.conf.default"
+#echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
 
 #sed -i 's@coolsnowwolf/packages@P3TERX/packages@' feeds.conf.default
 
